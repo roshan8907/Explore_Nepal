@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - Explore Nepal</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff8f2;
+      color: #2c2c2c;
+    }
+
+    header {
+      background-image: url('/images/nepal-banner.jpg');
+      height: 240px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      color: white;
+      background-color: rgba(0,0,0,0.5);
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: #8d1f1f;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .welcome {
+      text-align: center;
+      margin: 15px 0;
+      font-weight: bold;
+      color: #205072;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Gallery of Nepal</h1>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <% if (user) { %>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/add-package">Add Package</a>
+      <a href="/feedback">Feedback</a>
+      <a href="/logout">Logout</a>
+    <% } else { %>
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+    <% } %>
+  </nav>
+
+  <% if (user) { %>
+    <p class="welcome">Welcome, <%= user.name %>!</p>
+  <% } %>
+
+  <div class="gallery">
+    <img src="/images/everest.jpg" alt="Everest">
+    <img src="/images/lumbini.jpg" alt="Lumbini">
+    <img src="/images/boudhanath.jpg" alt="Boudhanath">
+    <img src="/images/swayambhunath.jpg" alt="Swayambhunath">
+    <img src="/images/pokhara-lake.jpg" alt="Pokhara Lake">
+    <img src="/images/chitwan.jpg" alt="Chitwan Safari">
+    <img src="/images/mustang.jpg" alt="Mustang">
+    <img src="/images/bhaktapur.jpg" alt="Bhaktapur Durbar Square">
+    <img src="/images/annapurna.jpg" alt="Annapurna Range">
+    <img src="/images/rafting.jpg" alt="Trishuli Rafting">
+    <img src="/images/bandipur.jpg" alt="Bandipur">
+    <img src="/images/gosaikunda.jpg" alt="Gosaikunda Lake">
+    <img src="/images/ilam.jpg" alt="Ilam Tea Garden">
+    <img src="/images/janakpur.jpg" alt="Janaki Temple">
+    <img src="/images/dhulikhel.jpg" alt="Dhulikhel">
+    <img src="/images/kopan.jpg" alt="Kopan Monastery">
+    <img src="/images/patan.jpg" alt="Patan Durbar Square">
+    <img src="/images/tansen.jpg" alt="Tansen">
+    <img src="/images/mountaineering.jpg" alt="Mountaineering Nepal">
+    <img src="/images/trail.jpg" alt="Hiking Trail in Nepal">
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - Explore Nepal</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fef9f5;
+      color: #2c2c2c;
+    }
+
+    .header {
+      background-color: #8d1f1f;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .subheading {
+      font-size: 16px;
+      color: #fcdede;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      text-align: center;
+      margin-top: 15px;
+      background-color: #f4c542;
+      padding: 10px 0;
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2c2c2c;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 25px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #8d1f1f;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .welcome-text {
+      text-align: center;
+      font-size: 17px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .stats-box {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .stats-box div {
+      background-color: #e6f2ff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      width: 30%;
+    }
+
+    .stats-box h3 {
+      color: #205072;
+      margin-bottom: 5px;
+    }
+
+    .package-card {
+      border: 1px solid #ddd;
+      border-left: 5px solid #205072;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .package-card h3 {
+      margin: 0 0 10px;
+      color: #205072;
+    }
+
+    .package-card p {
+      margin: 0;
+    }
+
+    .promo-section {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+    }
+
+    .promo-section h3 {
+      color: #8d1f1f;
+    }
+
+    .promo-section p {
+      color: #444;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Explore Nepal</h1>
+    <div class="subheading">Dashboard</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="/add-package">Add New Package</a>
+    <a href="/feedback">Give Feedback</a>
+    <a href="/gallery">View Gallery</a>
+    <a href="/trekking-planner">Trekking Planner</a>
+    <a href="/videos">Videos</a>
+    <a href="/logout">Logout</a>
+  </div>
+
+  <div class="container">
+    <h2>Welcome, <%= user.name %>!</h2>
+    <p class="welcome-text">
+      Here is your personalized dashboard. You can manage your tour packages, share feedback, and explore the beauty of Nepal through our curated gallery.
+    </p>
+
+    <div class="stats-box">
+      <div>
+        <h3>Total Packages</h3>
+        <p><%= packages.length %></p>
+      </div>
+      <div>
+        <h3>Feedback Given</h3>
+        <p>View in Dashboard</p>
+      </div>
+      <div>
+        <h3>Gallery Items</h3>
+        <p>20+ Images</p>
+      </div>
+    </div>
+
+    <h2>Your Tour Packages</h2>
+
+    <% if (packages.length === 0) { %>
+      <p style="text-align:center;">You haven't added any packages yet.</p>
+    <% } else { %>
+      <% packages.forEach(pkg => { %>
+        <div class="package-card">
+          <h3><%= pkg.title %></h3>
+          <p><%= pkg.description %></p>
+        </div>
+      <% }) %>
+    <% } %>
+
+    <div class="promo-section">
+      <h3>Discover More</h3>
+      <p>Have you tried our new trekking planner or seen our travel story showcase? Head over to the gallery and explore the wonders of Nepal from other travelers' perspectives.</p>
+    </div>
+  </div>
+
+</body>
+</html>

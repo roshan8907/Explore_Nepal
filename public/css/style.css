@@ -1,0 +1,206 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f1ee;
+  color: #2c2c2c;
+}
+
+/* Header image */
+.header-image {
+  width: 100%;
+  height: 300px;
+  background-image: url('/images/nepal-banner.jpg'); /* Replace with your top hero image path */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Page Container */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1, h2 {
+  color: #8d1f1f; /* Deep red inspired by Nepal's flag */
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: #205072;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #205072; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: #132e3f;
+}
+
+.package-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Messages */
+.error-message {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.success-message {
+  color: green;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #8d1f1f;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+/* Gallery grid */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 280px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .header-image {
+    height: 200px;
+  }
+}
+
+
+/* Video Gallery */
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.video-item {
+  text-align: center;
+}
+
+.video-item iframe {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-item p {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+
+.video-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.video-container h3 {
+  margin-bottom: 12px;
+  color: #8d1f1f;
+}
+
+.video-container iframe {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.video-container iframe:hover {
+  transform: scale(1.05);
+}
+
+
+
